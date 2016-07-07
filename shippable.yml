@@ -44,9 +44,17 @@ integrations:
       recipients: 
         - deepika@shippable.com
       
-      on_pull_request: always
-      on_start: always
-      on_success: always
-      on_failure: always
-
+      on_pull_request: never
+      on_start: never
+      on_success: never
+      on_failure: never
+    - integrationName: deepika-slack
+      type: slack
+      recipients: 
+        - "#testing"
+      
+      on_pull_request: never
+      on_start: never
+      on_success: never
+      on_failure: never
   
