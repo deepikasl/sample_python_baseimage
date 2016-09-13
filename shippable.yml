@@ -19,19 +19,7 @@ env:
 build:
   
   pre_ci_boot:
-    image_name: drydock/u14pyt
+    image_name: ankul/u14pytpls
     image_tag: tip
     pull: true
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
-  ci:
-    - ps -eax
-    - ls -al
-    - pip install -r requirements.txt
-    - mkdir -p shippable/testresults
-    - mkdir -p shippable/codecoverage
-    - which python
-    - coverage run `which nosetests` test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-    - coverage xml -o shippable/codecoverage/coverage.xml
-
-  
